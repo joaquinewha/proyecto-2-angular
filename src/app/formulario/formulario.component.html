@@ -1,0 +1,69 @@
+<div>
+    <h2>Informacion Basica</h2>
+    <form [formGroup]="FormularioBasico" action="">
+        <br>
+        Nombre <input type="text" formControlName="nombre">
+        <br>
+        CI <input type="text" formControlName="ci">
+        <br>
+        Numero de empleado <input type="text" formControlName="nro">
+        <p>Area de trabajo </p>
+        Direccion General<input type="radio" formControlName="area" value="DG">
+        Recursos humanos<input type="radio"  formControlName="area" value="RH">
+        Finanza Contabilidad<input type="radio" formControlName="area" value="FC">
+        Marketing<input type="radio"  formControlName="area" value="M">
+        Informatica<input type="radio"  formControlName="area" value="I">
+        Produccion<input type="radio"  formControlName="area" value="P">
+        <br>
+        Profesion o especialidad <input type="text" formControlName="profesion">
+        <br>
+        Años de trabajo <input type="text" formControlName="añoT">
+
+        <p>Genero </p>
+        Hombre<input type="radio"  formControlName="g">
+        Mujer<input type="radio"  formControlName="g">
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Informacion Seguro Medico</h2>
+    <form [formGroup]="FormularioSeguro" action="">
+        Peso <input type="text" formControlName="peso">
+        <br>
+        Estatura <input type="text" formControlName="estatura">
+        <br>
+        Presion sistolica<input type="text" formControlName="pS">
+        <br>
+        Presion distolica<input type="text" formControlName="pD">
+
+        <p>Enfermedades Base </p>
+        Hombre<input type="checkbox"  formControlName="e">
+        Mujer<input type="checkbox"  formControlName="m">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Examen de Sangre</h2>
+    <form [formGroup]="FormularioExamenS" action="">
+        <p>Tipo de Sangre </p>
+        Tipo A<input type="radio"  formControlName="t" value="a">
+        Tipo B<input type="radio"  formControlName="t" value="b">
+        Tipo AB<input type="radio"  formControlName="t" value="ab">
+        Tipo O<input type="radio"  formControlName="t" value="o">
+        <br>
+        Nivel Glucosa en la sangre <input type="text" formControlName="nG">
+        <br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Informacion Contactos</h2>
+    <form [formGroup]="FormularioContactos" action="">
+        Telefono <input type="text" formControlName="tel">
+        <br>
+        Correo <input type="text" formControlName="co">
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</div>
