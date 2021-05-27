@@ -1,0 +1,10 @@
+#logo{
+    width: 70px;
+    height: 70px;
+}
+#logoT{
+    font-size: 10px;
+    margin-top: 0px;
+    color: teal;
+    font-weight: 900;
+}

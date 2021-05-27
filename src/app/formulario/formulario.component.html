@@ -1,69 +1,83 @@
-<div>
-    <h2>Informacion Basica</h2>
+<div id="form">
+    <h2 id="seccion">INFORMACION BASICA</h2>
+    <hr color="darkcyan">
     <form [formGroup]="FormularioBasico" action="">
         <br>
-        Nombre <input type="text" formControlName="nombre">
+        <input type="text" formControlName="nombre" id="controls_1" placeholder="Nombre completo" [(ngModel)]="nombre">
+        <input type="text" formControlName="ci" id="controls_2" placeholder="CI" [(ngModel)]="ci">
+        <input type="text" formControlName="nro" id="controls_3" placeholder="Num. empleado" >
         <br>
-        CI <input type="text" formControlName="ci">
+        <label id="txt2"> Area de trabajo: </label>
         <br>
-        Numero de empleado <input type="text" formControlName="nro">
-        <p>Area de trabajo </p>
-        Direccion General<input type="radio" formControlName="area" value="DG">
-        Recursos humanos<input type="radio"  formControlName="area" value="RH">
-        Finanza Contabilidad<input type="radio" formControlName="area" value="FC">
-        Marketing<input type="radio"  formControlName="area" value="M">
-        Informatica<input type="radio"  formControlName="area" value="I">
-        Produccion<input type="radio"  formControlName="area" value="P">
-        <br>
-        Profesion o especialidad <input type="text" formControlName="profesion">
-        <br>
-        Años de trabajo <input type="text" formControlName="añoT">
+        <input type="radio" formControlName="area" value="DG" id="radio" [(ngModel)]="area"><label >Direccion General</label>
+        <input type="radio"  formControlName="area" value="RH" id="radio" [(ngModel)]="area"><label for="">Recursos humanos</label>
+        <input type="radio" formControlName="area" value="FC" id="radio" [(ngModel)]="area"><label for="">Finanza Contabilidad</label><br>
+        <input type="radio"  formControlName="area" value="M" id="radio" [(ngModel)]="area"><label for="">Marketing</label>
+        <input type="radio"  formControlName="area" value="I" id="radio" [(ngModel)]="area"><label for="">Informatica</label>
+        <input type="radio"  formControlName="area" value="P" id="radio" [(ngModel)]="area"><label for="">Produccion</label><br><br>
 
-        <p>Genero </p>
-        Hombre<input type="radio"  formControlName="g">
-        Mujer<input type="radio"  formControlName="g">
+        <input type="text" formControlName="profesion" id="controls_1" placeholder="Profesion o especialidad" [(ngModel)]="profesion">
+        <input type="text" formControlName="añoT" id="controls_3" placeholder="Años trabajo" [(ngModel)]="aT">
+        <br>
+        <label for="" id="txt2">Genero: </label>
+        <input type="radio"  formControlName="g" id="radio" value="hombre" [(ngModel)]="g">Hombre
+        <input type="radio"  formControlName="g" id="radio" value="mujer" [(ngModel)]="g">Mujer
         <br>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" id="boton" (click)="formB()" [disabled]="FormularioBasico.invalid">Enviar</button>
     </form>
+    <div>Valido: {{FormularioBasico.valid | json}}</div>
+    
 
-    <h2>Informacion Seguro Medico</h2>
+    <h2 id="seccion">INFORMACION SEGURO MEDICO</h2>
+    <hr color="darkcyan">
     <form [formGroup]="FormularioSeguro" action="">
-        Peso <input type="text" formControlName="peso">
+        <input type="number" formControlName="peso" id="controls_3" placeholder="Peso" [(ngModel)]="peso">
+        <input type="number" formControlName="estatura" id="controls_3" placeholder="Estatura" [(ngModel)]="estatura"><br>
+        <label for="" id="txt2">Presion sistolica</label><input type="text" formControlName="pS" id="controls_3" placeholder="" [(ngModel)]="pS">
+        
+        <label for="" id="txt2">Presion distolica</label><input type="text" formControlName="pD" id="controls_3" placeholder="" [(ngModel)]="pD">
         <br>
-        Estatura <input type="text" formControlName="estatura">
+        <label for="" id="txt2">Enfermedades Base</label>
         <br>
-        Presion sistolica<input type="text" formControlName="pS">
+        <input type="checkbox"  formControlName="eR" id="radio">Enfermedad respiratoria
+        <input type="checkbox"  formControlName="eC" id="radio">Enfermedad cardiovascular
+        <input type="checkbox"  formControlName="eRl" id="radio">Enfermedad renal
+        <input type="checkbox"  formControlName="eCs" id="radio">Enfermedad cardiacas
+        <input type="checkbox"  formControlName="eI" id="radio">Enfermedad inmunodeprimidas
         <br>
-        Presion distolica<input type="text" formControlName="pD">
-
-        <p>Enfermedades Base </p>
-        Hombre<input type="checkbox"  formControlName="e">
-        Mujer<input type="checkbox"  formControlName="m">
+        <input type="checkbox"  formControlName="eH" id="radio">Enfermedad hepaticas
+        <input type="checkbox"  formControlName="o" id="radio">Otras
         <br>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="boton" (click)="formSeg()" [disabled]="FormularioSeguro.invalid" >Enviar</button>
     </form>
+    <div>Valido: {{FormularioSeguro.valid | json}}</div>
 
-    <h2>Examen de Sangre</h2>
+    <h2 id="seccion">EXAMEN DE SANGRE</h2>
+    <hr color="darkcyan">
     <form [formGroup]="FormularioExamenS" action="">
-        <p>Tipo de Sangre </p>
-        Tipo A<input type="radio"  formControlName="t" value="a">
-        Tipo B<input type="radio"  formControlName="t" value="b">
-        Tipo AB<input type="radio"  formControlName="t" value="ab">
-        Tipo O<input type="radio"  formControlName="t" value="o">
         <br>
-        Nivel Glucosa en la sangre <input type="text" formControlName="nG">
+        <label for="" id="txt2">Tipo de Sangre</label>
+        <br>
+        <input type="radio"  formControlName="t" value="a" id="radio" [(ngModel)]="t" value="Tipo A">Tipo A
+        <input type="radio"  formControlName="t" value="b" id="radio" [(ngModel)]="t" value="Tipo B">Tipo B
+        <input type="radio"  formControlName="t" value="ab" id="radio" [(ngModel)]="t" value="Tipo AB">Tipo AB
+        <input type="radio"  formControlName="t" value="o" id="radio" [(ngModel)]="t" value="Tipo O">Tipo O
+        <br><br>
+        <label for="" id="txt2">Nivel Glucosa en la sangre</label> <input type="text" formControlName="nG" id="controls_3" placeholder="" [(ngModel)]="nG">
         <br>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" id="boton" (click)="formS()" [disabled]="FormularioExamenS.invalid">Enviar</button>
     </form>
+    <div>Valido: {{FormularioExamenS.valid | json}}</div>
 
-    <h2>Informacion Contactos</h2>
+    <h2 id="seccion">INFORMACION CONTACTOS</h2>
+    <hr color="darkcyan">
     <form [formGroup]="FormularioContactos" action="">
-        Telefono <input type="text" formControlName="tel">
-        <br>
-        Correo <input type="text" formControlName="co">
-        <br>
-        <button type="submit">Enviar</button>
+        <input type="text" formControlName="tel" id="controls_2" placeholder="Telefono" [(ngModel)]="tel">
+        <input type="email" formControlName="co" id="controls_2" placeholder="Email" [(ngModel)]="co">
+
+        <button type="submit" id="boton" (click)="formC()" [disabled]="FormularioContactos.invalid">Enviar</button>
     </form>
+    <div>Valido: {{FormularioContactos.valid | json}}</div>
 </div>

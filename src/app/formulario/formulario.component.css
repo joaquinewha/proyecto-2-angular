@@ -1,0 +1,49 @@
+#form{
+    margin:auto;
+    width: 700px;
+}
+#seccion{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#txt2{
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#controls_1{
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+#controls_2{
+    width: 43%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    margin-right: 20px;
+}
+#controls_3{
+    width: 15%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px; margin-right: 50px;
+}
+
+#radio{
+    margin: 7px;
+    margin-left: 50px;
+}
+#boton{
+    width: 40%;
+    padding: 12px;
+    border: none;
+    background-color: darkcyan;
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
